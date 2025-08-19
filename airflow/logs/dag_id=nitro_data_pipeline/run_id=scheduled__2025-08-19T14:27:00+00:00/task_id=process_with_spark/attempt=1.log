@@ -25,3 +25,18 @@
 +---------+--------------------+-----+
 only showing top 5 rows
 [2025-08-19T14:35:11.672+0000] {logging_mixin.py:149} INFO - ===== CALCULANDO PROMEDIOS =====
+[2025-08-19T14:36:09.785+0000] {logging_mixin.py:149} INFO - +---------+------------------+
+|sensor_id|         avg_value|
++---------+------------------+
+| sensor_0|24.922155578837103|
+| sensor_1|24.995177362577856|
+| sensor_4|24.957716359575684|
+| sensor_2| 25.01424740010943|
+| sensor_3|25.002161084529508|
++---------+------------------+
+[2025-08-19T14:36:09.787+0000] {logging_mixin.py:149} INFO - ===== GUARDANDO RESULTADOS EN POSTGRES =====
+[2025-08-19T14:37:19.610+0000] {logging_mixin.py:149} INFO - ===== PROCESO COMPLETADO CON ÉXITO =====
+[2025-08-19T14:37:19.626+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-08-19T14:37:19.701+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=nitro_data_pipeline, task_id=process_with_spark, execution_date=20250819T142700, start_date=20250819T143003, end_date=20250819T143719
+[2025-08-19T14:37:19.855+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-08-19T14:37:19.943+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check
