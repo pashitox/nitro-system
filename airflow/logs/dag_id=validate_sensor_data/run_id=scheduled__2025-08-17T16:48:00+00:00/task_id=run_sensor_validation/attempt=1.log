@@ -1,0 +1,14 @@
+[2025-08-17T16:52:39.892+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: validate_sensor_data.run_sensor_validation scheduled__2025-08-17T16:48:00+00:00 [queued]>
+[2025-08-17T16:52:39.906+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: validate_sensor_data.run_sensor_validation scheduled__2025-08-17T16:48:00+00:00 [queued]>
+[2025-08-17T16:52:39.906+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2025-08-17T16:52:39.924+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): run_sensor_validation> on 2025-08-17 16:48:00+00:00
+[2025-08-17T16:52:39.932+0000] {standard_task_runner.py:57} INFO - Started process 20284 to run task
+[2025-08-17T16:52:39.937+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'validate_sensor_data', 'run_sensor_validation', 'scheduled__2025-08-17T16:48:00+00:00', '--job-id', '189', '--raw', '--subdir', 'DAGS_FOLDER/validate_sensor_data_dag.py', '--cfg-path', '/tmp/tmpo_p9pxqs']
+[2025-08-17T16:52:39.940+0000] {standard_task_runner.py:85} INFO - Job 189: Subtask run_sensor_validation
+[2025-08-17T16:52:40.014+0000] {task_command.py:410} INFO - Running <TaskInstance: validate_sensor_data.run_sensor_validation scheduled__2025-08-17T16:48:00+00:00 [running]> on host 4860d8807aa2
+[2025-08-17T16:52:40.402+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='validate_sensor_data' AIRFLOW_CTX_TASK_ID='run_sensor_validation' AIRFLOW_CTX_EXECUTION_DATE='2025-08-17T16:48:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-17T16:48:00+00:00'
+[2025-08-17T16:52:40.417+0000] {logging_mixin.py:149} INFO - ✅ Validación exitosa
+[2025-08-17T16:52:40.417+0000] {python.py:183} INFO - Done. Returned value was: True
+[2025-08-17T16:52:40.456+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=validate_sensor_data, task_id=run_sensor_validation, execution_date=20250817T164800, start_date=20250817T165239, end_date=20250817T165240
+[2025-08-17T16:52:40.511+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-08-17T16:52:40.535+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

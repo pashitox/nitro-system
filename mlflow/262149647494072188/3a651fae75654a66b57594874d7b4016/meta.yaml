@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/proyecto-nitro/mlflow/262149647494072188/3a651fae75654a66b57594874d7b4016/artifacts
+end_time: 1755520893497
+entry_point_name: ''
+experiment_id: '262149647494072188'
+lifecycle_stage: active
+run_id: 3a651fae75654a66b57594874d7b4016
+run_name: Class_Weight_Approach
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755520892577
+status: 4
+tags: []
+user_id: user

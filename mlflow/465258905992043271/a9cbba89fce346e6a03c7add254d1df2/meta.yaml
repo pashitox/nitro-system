@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/proyecto-nitro/mlflow/465258905992043271/a9cbba89fce346e6a03c7add254d1df2/artifacts
+end_time: 1755520567822
+entry_point_name: ''
+experiment_id: '465258905992043271'
+lifecycle_stage: active
+run_id: a9cbba89fce346e6a03c7add254d1df2
+run_name: RF_Ajustado
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755520553908
+status: 3
+tags: []
+user_id: user

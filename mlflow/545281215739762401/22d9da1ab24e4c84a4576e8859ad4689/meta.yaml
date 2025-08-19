@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/proyecto-nitro/mlflow/545281215739762401/22d9da1ab24e4c84a4576e8859ad4689/artifacts
+end_time: 1755520820501
+entry_point_name: ''
+experiment_id: '545281215739762401'
+lifecycle_stage: active
+run_id: 22d9da1ab24e4c84a4576e8859ad4689
+run_name: Small_Data_Approach
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755520819928
+status: 4
+tags: []
+user_id: user

@@ -1,0 +1,6 @@
+sensor_id,actual,predicted,probability_anomaly,correct
+sensor_0,0,0.0,0.0,True
+sensor_1,0,1.0,0.5950227194842133,False
+sensor_2,0,0.0,0.0,True
+sensor_3,0,0.0,0.002200037359513711,True
+sensor_4,1,0.0,0.0,False

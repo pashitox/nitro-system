@@ -1,0 +1,42 @@
+[2025-08-18T20:21:01.616+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-18T20:18:00+00:00 [queued]>
+[2025-08-18T20:21:01.636+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-18T20:18:00+00:00 [queued]>
+[2025-08-18T20:21:01.637+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2025-08-18T20:21:01.668+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): process_with_spark> on 2025-08-18 20:18:00+00:00
+[2025-08-18T20:21:01.677+0000] {standard_task_runner.py:57} INFO - Started process 6577 to run task
+[2025-08-18T20:21:01.684+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'nitro_data_pipeline', 'process_with_spark', 'scheduled__2025-08-18T20:18:00+00:00', '--job-id', '143', '--raw', '--subdir', 'DAGS_FOLDER/data_pipeline.py', '--cfg-path', '/tmp/tmpoobw20di']
+[2025-08-18T20:21:01.688+0000] {standard_task_runner.py:85} INFO - Job 143: Subtask process_with_spark
+[2025-08-18T20:21:01.794+0000] {task_command.py:410} INFO - Running <TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-18T20:18:00+00:00 [running]> on host 26c1c319ade5
+[2025-08-18T20:21:02.080+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nitro_data_pipeline' AIRFLOW_CTX_TASK_ID='process_with_spark' AIRFLOW_CTX_EXECUTION_DATE='2025-08-18T20:18:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-18T20:18:00+00:00'
+[2025-08-18T20:21:02.082+0000] {logging_mixin.py:149} INFO - ===== INICIANDO PROCESO DE SPARK =====
+[2025-08-18T20:21:09.724+0000] {logging_mixin.py:149} INFO - ===== LEYENDO JSON DESDE MINIO =====
+[2025-08-18T20:22:36.781+0000] {logging_mixin.py:149} INFO - Registros leídos: 6286
+[2025-08-18T20:22:36.788+0000] {logging_mixin.py:149} INFO - root
+ |-- sensor_id: string (nullable = true)
+ |-- timestamp: string (nullable = true)
+ |-- value: double (nullable = true)
+[2025-08-18T20:22:37.346+0000] {logging_mixin.py:149} INFO - +---------+--------------------+-----+
+|sensor_id|           timestamp|value|
++---------+--------------------+-----+
+| sensor_1|2025-08-18T18:51:...|20.56|
+| sensor_4|2025-08-18T18:51:...|25.16|
+| sensor_0|2025-08-18T18:51:...|28.27|
+| sensor_3|2025-08-18T18:50:...|27.02|
+| sensor_3|2025-08-18T18:50:...|27.84|
++---------+--------------------+-----+
+only showing top 5 rows
+[2025-08-18T20:22:37.409+0000] {logging_mixin.py:149} INFO - ===== CALCULANDO PROMEDIOS =====
+[2025-08-18T20:22:47.580+0000] {logging_mixin.py:149} INFO - +---------+------------------+
+|sensor_id|         avg_value|
++---------+------------------+
+| sensor_0|24.948322046651608|
+| sensor_1| 24.98063504823151|
+| sensor_4|24.909599999999994|
+| sensor_2|24.981683168316835|
+| sensor_3| 25.06406739811913|
++---------+------------------+
+[2025-08-18T20:22:47.580+0000] {logging_mixin.py:149} INFO - ===== GUARDANDO RESULTADOS EN POSTGRES =====
+[2025-08-18T20:22:57.231+0000] {logging_mixin.py:149} INFO - ===== PROCESO COMPLETADO CON ÉXITO =====
+[2025-08-18T20:22:57.232+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-08-18T20:22:57.259+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=nitro_data_pipeline, task_id=process_with_spark, execution_date=20250818T201800, start_date=20250818T202101, end_date=20250818T202257
+[2025-08-18T20:22:57.325+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-08-18T20:22:57.369+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

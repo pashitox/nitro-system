@@ -1,0 +1,33 @@
+[2025-08-18T10:47:43.654+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nitro_data_pipeline.process_with_spark manual__2025-08-18T10:38:28+00:00 [queued]>
+[2025-08-18T10:47:43.670+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nitro_data_pipeline.process_with_spark manual__2025-08-18T10:38:28+00:00 [queued]>
+[2025-08-18T10:47:43.670+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 1
+[2025-08-18T10:47:43.702+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): process_with_spark> on 2025-08-18 10:38:28+00:00
+[2025-08-18T10:47:43.712+0000] {standard_task_runner.py:57} INFO - Started process 243 to run task
+[2025-08-18T10:47:43.725+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'nitro_data_pipeline', 'process_with_spark', 'manual__2025-08-18T10:38:28+00:00', '--job-id', '253', '--raw', '--subdir', 'DAGS_FOLDER/data_pipeline.py', '--cfg-path', '/tmp/tmpjztgszcs']
+[2025-08-18T10:47:43.729+0000] {standard_task_runner.py:85} INFO - Job 253: Subtask process_with_spark
+[2025-08-18T10:47:43.832+0000] {task_command.py:410} INFO - Running <TaskInstance: nitro_data_pipeline.process_with_spark manual__2025-08-18T10:38:28+00:00 [running]> on host e3730e5f69d2
+[2025-08-18T10:47:44.122+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nitro_data_pipeline' AIRFLOW_CTX_TASK_ID='process_with_spark' AIRFLOW_CTX_EXECUTION_DATE='2025-08-18T10:38:28+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-18T10:38:28+00:00'
+[2025-08-18T10:47:44.124+0000] {logging_mixin.py:149} INFO - ===== INICIANDO PROCESO DE SPARK =====
+[2025-08-18T10:48:01.413+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_pipeline.py", line 11, in process_with_spark
+    "org.apache.hadoop:hadoop-aws:3.3.1,"
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/session.py", line 269, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/context.py", line 483, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/context.py", line 195, in __init__
+    SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/context.py", line 417, in _ensure_initialized
+    SparkContext._gateway = gateway or launch_gateway(conf)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/java_gateway.py", line 106, in launch_gateway
+    raise RuntimeError("Java gateway process exited before sending its port number")
+RuntimeError: Java gateway process exited before sending its port number
+[2025-08-18T10:48:01.425+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=nitro_data_pipeline, task_id=process_with_spark, execution_date=20250818T103828, start_date=20250818T104743, end_date=20250818T104801
+[2025-08-18T10:48:01.445+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 253 for task process_with_spark (Java gateway process exited before sending its port number; 243)
+[2025-08-18T10:48:01.464+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-08-18T10:48:01.483+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

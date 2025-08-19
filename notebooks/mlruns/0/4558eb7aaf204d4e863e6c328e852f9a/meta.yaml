@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/proyecto-nitro/notebooks/mlruns/0/4558eb7aaf204d4e863e6c328e852f9a/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4558eb7aaf204d4e863e6c328e852f9a
+run_name: dazzling-mare-922
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755524694412
+status: 1
+tags: []
+user_id: user

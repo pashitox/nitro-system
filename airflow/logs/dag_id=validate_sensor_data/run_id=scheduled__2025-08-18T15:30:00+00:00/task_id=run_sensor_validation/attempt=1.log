@@ -1,0 +1,39 @@
+[2025-08-18T15:33:18.294+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: validate_sensor_data.run_sensor_validation scheduled__2025-08-18T15:30:00+00:00 [queued]>
+[2025-08-18T15:33:18.332+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: validate_sensor_data.run_sensor_validation scheduled__2025-08-18T15:30:00+00:00 [queued]>
+[2025-08-18T15:33:18.333+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2025-08-18T15:33:18.408+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): run_sensor_validation> on 2025-08-18 15:30:00+00:00
+[2025-08-18T15:33:18.456+0000] {standard_task_runner.py:57} INFO - Started process 1232 to run task
+[2025-08-18T15:33:18.490+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'validate_sensor_data', 'run_sensor_validation', 'scheduled__2025-08-18T15:30:00+00:00', '--job-id', '455', '--raw', '--subdir', 'DAGS_FOLDER/validate_sensor_data_dag.py', '--cfg-path', '/tmp/tmpejo_h1k0']
+[2025-08-18T15:33:18.497+0000] {standard_task_runner.py:85} INFO - Job 455: Subtask run_sensor_validation
+[2025-08-18T15:33:18.911+0000] {task_command.py:410} INFO - Running <TaskInstance: validate_sensor_data.run_sensor_validation scheduled__2025-08-18T15:30:00+00:00 [running]> on host 82ba84950a6e
+[2025-08-18T15:33:19.649+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='validate_sensor_data' AIRFLOW_CTX_TASK_ID='run_sensor_validation' AIRFLOW_CTX_EXECUTION_DATE='2025-08-18T15:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-18T15:30:00+00:00'
+[2025-08-18T15:33:20.499+0000] {util.py:1938} INFO - Could not find local context root directory
+[2025-08-18T15:33:20.512+0000] {abstract_data_context.py:5421} INFO - EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+[2025-08-18T15:33:20.518+0000] {config.py:53} INFO - Loading 'datasources' ->
+{}
+[2025-08-18T15:33:20.519+0000] {config.py:79} INFO - Loaded 'datasources' ->
+{}
+[2025-08-18T15:33:20.828+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.7/site-packages/great_expectations/data_context/data_context/abstract_data_context.py:2708: DeprecationWarning: create_expectation_suite is deprecated as of v0.15.48 and will be removed in v0.18. Please use add_expectation_suite or add_or_update_expectation_suite instead.
+  DeprecationWarning,
+
+[2025-08-18T15:33:20.921+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_validation/sensor_validator.py", line 33, in validate_sensor_data
+    expectation_suite_name=suite_name,
+  File "/home/airflow/.local/lib/python3.7/site-packages/great_expectations/data_context/data_context/abstract_data_context.py", line 2430, in get_validator
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/great_expectations/core/usage_statistics/usage_statistics.py", line 318, in usage_statistics_wrapped_method
+    result = func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/great_expectations/data_context/data_context/abstract_data_context.py", line 2597, in get_batch_list
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/great_expectations/data_context/data_context/abstract_data_context.py", line 2651, in _get_batch_list
+    "The given datasource could not be retrieved from the DataContext; "
+great_expectations.exceptions.exceptions.DatasourceError: Cannot initialize datasource pandas_datasource, error: The given datasource could not be retrieved from the DataContext; please confirm that your configuration is accurate.
+[2025-08-18T15:33:21.079+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=validate_sensor_data, task_id=run_sensor_validation, execution_date=20250818T153000, start_date=20250818T153318, end_date=20250818T153321
+[2025-08-18T15:33:21.261+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 455 for task run_sensor_validation (Cannot initialize datasource pandas_datasource, error: The given datasource could not be retrieved from the DataContext; please confirm that your configuration is accurate.; 1232)
+[2025-08-18T15:33:21.363+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2025-08-18T15:33:21.470+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

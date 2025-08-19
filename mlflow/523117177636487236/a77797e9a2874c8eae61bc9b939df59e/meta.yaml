@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/proyecto-nitro/mlflow/523117177636487236/a77797e9a2874c8eae61bc9b939df59e/artifacts
+end_time: 1755521181788
+entry_point_name: ''
+experiment_id: '523117177636487236'
+lifecycle_stage: active
+run_id: a77797e9a2874c8eae61bc9b939df59e
+run_name: Robust_Modeling
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755521176353
+status: 3
+tags: []
+user_id: user

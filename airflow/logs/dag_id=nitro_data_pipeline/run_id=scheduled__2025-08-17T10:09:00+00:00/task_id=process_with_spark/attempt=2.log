@@ -1,0 +1,10 @@
+[2025-08-17T10:14:29.898+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-17T10:09:00+00:00 [queued]>
+[2025-08-17T10:14:29.910+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-17T10:09:00+00:00 [queued]>
+[2025-08-17T10:14:29.910+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 1
+[2025-08-17T10:14:29.929+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): process_with_spark> on 2025-08-17 10:09:00+00:00
+[2025-08-17T10:14:29.940+0000] {standard_task_runner.py:57} INFO - Started process 198 to run task
+[2025-08-17T10:14:29.950+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'nitro_data_pipeline', 'process_with_spark', 'scheduled__2025-08-17T10:09:00+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/data_pipeline.py', '--cfg-path', '/tmp/tmpi9ugvo3f']
+[2025-08-17T10:14:29.952+0000] {standard_task_runner.py:85} INFO - Job 137: Subtask process_with_spark
+[2025-08-17T10:14:30.066+0000] {task_command.py:410} INFO - Running <TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-17T10:09:00+00:00 [running]> on host dc12947aaf42
+[2025-08-17T10:14:30.187+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nitro_data_pipeline' AIRFLOW_CTX_TASK_ID='process_with_spark' AIRFLOW_CTX_EXECUTION_DATE='2025-08-17T10:09:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-17T10:09:00+00:00'
+[2025-08-17T10:14:30.188+0000] {logging_mixin.py:149} INFO - ===== INICIANDO PROCESO DE SPARK =====

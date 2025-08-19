@@ -1,0 +1,10 @@
+artifact_location: file:///home/user/proyecto-nitro/mlflow/465258905992043271/models/m-caf39df4b4f94d79bc39c48d01d1ef06/artifacts
+creation_timestamp: 1755520554392
+experiment_id: '465258905992043271'
+last_updated_timestamp: 1755520567706
+model_id: m-caf39df4b4f94d79bc39c48d01d1ef06
+model_type: null
+name: model
+source_run_id: a9cbba89fce346e6a03c7add254d1df2
+status: 2
+status_message: null

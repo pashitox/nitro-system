@@ -1,0 +1,9 @@
+apache-airflow-providers-apache-spark
+apache-airflow-providers-postgres
+pyspark==3.3.1
+minio==7.1.14
+psycopg2-binary==2.9.6
+pandas
+sqlalchemy
+great_expectations==0.15.50
+

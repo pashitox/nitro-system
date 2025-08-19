@@ -1,0 +1,5 @@
+Validación completada. Resultado: True
+   sensor_id  value
+0          1   25.0
+1          2   22.5
+2          3   29.0

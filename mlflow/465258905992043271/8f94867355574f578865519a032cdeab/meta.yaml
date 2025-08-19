@@ -1,0 +1,14 @@
+artifact_uri: file:///home/user/proyecto-nitro/mlflow/465258905992043271/8f94867355574f578865519a032cdeab/artifacts
+end_time: 1755520302712
+entry_point_name: ''
+experiment_id: '465258905992043271'
+lifecycle_stage: active
+run_id: 8f94867355574f578865519a032cdeab
+run_name: RF_Baseline_Corregido
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755520301813
+status: 4
+tags: []
+user_id: user
