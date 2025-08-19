@@ -27,11 +27,11 @@ status_col3.metric("MinIO", "✅ Recibiendo datos")
 refresh_time = st.sidebar.slider("⏱️ Frecuencia de actualización (segundos)", 
                                 min_value=1, max_value=30, value=5)
 
-# Conexión a PostgreSQL con SQLAlchemy - usando el nombre del servicio
+# Conexión a PostgreSQL con SQLAlchemy - usando localhost
 @st.cache_resource
 def get_db_engine():
     return create_engine(
-        'postgresql+psycopg2://nitro_user:nitro_pass@postgres:5432/nitro_db'
+        'postgresql+psycopg2://nitro_user:nitro_pass@localhost:5432/nitro_db'
     )
 
 # Consulta optimizada y manejo de datos
