@@ -1559,3 +1559,388 @@
 [2025-08-19T11:43:02.164+0000] {logging_mixin.py:149} INFO - [2025-08-19T11:43:02.164+0000] {dag.py:2726} INFO - Sync 1 DAGs
 [2025-08-19T11:43:02.235+0000] {logging_mixin.py:149} INFO - [2025-08-19T11:43:02.234+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T11:42:00+00:00, run_after=2025-08-19T11:45:00+00:00
 [2025-08-19T11:43:02.278+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.056 seconds
+[2025-08-19T13:41:10.831+0000] {processor.py:157} INFO - Started process (PID=171) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:41:10.833+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:41:10.834+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:41:10.834+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:41:11.554+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:41:11.691+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:41:11.690+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:41:12.212+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:41:12.212+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:39:00+00:00, run_after=2025-08-19T13:42:00+00:00
+[2025-08-19T13:41:12.301+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.484 seconds
+[2025-08-19T13:41:42.537+0000] {processor.py:157} INFO - Started process (PID=697) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:41:42.541+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:41:42.545+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:41:42.545+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:41:43.386+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:41:44.126+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:41:44.125+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:41:44.192+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:41:44.192+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:39:00+00:00, run_after=2025-08-19T13:42:00+00:00
+[2025-08-19T13:41:44.230+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.709 seconds
+[2025-08-19T13:42:14.864+0000] {processor.py:157} INFO - Started process (PID=1046) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:42:14.877+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:42:14.905+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:42:14.905+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:42:18.462+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:42:25.875+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:42:25.874+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:42:26.150+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:42:26.150+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:42:00+00:00, run_after=2025-08-19T13:45:00+00:00
+[2025-08-19T13:42:26.608+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 11.841 seconds
+[2025-08-19T13:42:57.164+0000] {processor.py:157} INFO - Started process (PID=1171) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:42:57.173+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:42:57.179+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:42:57.178+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:43:00.623+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:43:00.761+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:43:00.760+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:43:00.904+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:43:00.904+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:42:00+00:00, run_after=2025-08-19T13:45:00+00:00
+[2025-08-19T13:43:00.984+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 3.840 seconds
+[2025-08-19T13:43:31.556+0000] {processor.py:157} INFO - Started process (PID=1266) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:43:31.564+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:43:31.568+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:43:31.568+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:43:35.088+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:43:35.182+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:43:35.179+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:43:35.410+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:43:35.410+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:42:00+00:00, run_after=2025-08-19T13:45:00+00:00
+[2025-08-19T13:43:35.582+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 4.125 seconds
+[2025-08-19T13:44:06.193+0000] {processor.py:157} INFO - Started process (PID=1339) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:44:06.195+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:44:06.198+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:44:06.198+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:44:10.198+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:44:10.516+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:44:10.514+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:44:10.754+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:44:10.753+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:42:00+00:00, run_after=2025-08-19T13:45:00+00:00
+[2025-08-19T13:44:10.915+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 4.757 seconds
+[2025-08-19T13:44:41.713+0000] {processor.py:157} INFO - Started process (PID=1423) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:44:41.731+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:44:41.751+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:44:41.750+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:44:46.781+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:44:46.986+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:44:46.981+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:44:47.500+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:44:47.491+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:42:00+00:00, run_after=2025-08-19T13:45:00+00:00
+[2025-08-19T13:44:47.744+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 6.213 seconds
+[2025-08-19T13:45:18.858+0000] {processor.py:157} INFO - Started process (PID=1513) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:45:18.863+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:45:18.865+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:45:18.865+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:45:21.739+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:45:21.966+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:45:21.966+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:45:22.154+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:45:22.153+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:45:00+00:00, run_after=2025-08-19T13:48:00+00:00
+[2025-08-19T13:45:22.245+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 3.426 seconds
+[2025-08-19T13:45:52.671+0000] {processor.py:157} INFO - Started process (PID=1598) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:45:52.677+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:45:52.679+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:45:52.679+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:45:55.705+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:45:55.819+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:45:55.818+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:45:56.092+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:45:56.092+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:45:00+00:00, run_after=2025-08-19T13:48:00+00:00
+[2025-08-19T13:45:56.295+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 3.672 seconds
+[2025-08-19T13:46:27.141+0000] {processor.py:157} INFO - Started process (PID=1686) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:46:27.151+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:46:27.163+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:46:27.162+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:46:31.074+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:46:31.143+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:46:31.143+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:46:31.475+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:46:31.474+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:45:00+00:00, run_after=2025-08-19T13:48:00+00:00
+[2025-08-19T13:46:31.568+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 4.505 seconds
+[2025-08-19T13:47:01.932+0000] {processor.py:157} INFO - Started process (PID=1753) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:47:01.951+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:47:01.957+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:47:01.956+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:47:05.222+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:47:05.544+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:47:05.544+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:47:05.831+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:47:05.830+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:45:00+00:00, run_after=2025-08-19T13:48:00+00:00
+[2025-08-19T13:47:05.951+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 4.136 seconds
+[2025-08-19T13:47:37.013+0000] {processor.py:157} INFO - Started process (PID=1842) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:47:37.034+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:47:37.036+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:47:37.035+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:47:40.767+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:47:40.924+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:47:40.923+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:47:41.096+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:47:41.095+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:45:00+00:00, run_after=2025-08-19T13:48:00+00:00
+[2025-08-19T13:47:41.310+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 4.377 seconds
+[2025-08-19T13:48:11.856+0000] {processor.py:157} INFO - Started process (PID=1874) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:48:11.925+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:48:11.927+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:48:11.927+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:48:16.223+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:48:16.491+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:48:16.490+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:48:16.678+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:48:16.677+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:48:00+00:00, run_after=2025-08-19T13:51:00+00:00
+[2025-08-19T13:48:16.829+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 5.050 seconds
+[2025-08-19T13:48:47.546+0000] {processor.py:157} INFO - Started process (PID=1959) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:48:47.555+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:48:47.559+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:48:47.559+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:48:51.298+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:48:51.495+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:48:51.494+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:48:51.975+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:48:51.974+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:48:00+00:00, run_after=2025-08-19T13:51:00+00:00
+[2025-08-19T13:48:52.788+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 5.295 seconds
+[2025-08-19T13:49:23.261+0000] {processor.py:157} INFO - Started process (PID=2064) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:49:23.271+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:49:23.277+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:49:23.275+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:49:27.028+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:49:27.525+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:49:27.522+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:49:27.826+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:49:27.825+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:48:00+00:00, run_after=2025-08-19T13:51:00+00:00
+[2025-08-19T13:49:28.112+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 4.887 seconds
+[2025-08-19T13:49:58.591+0000] {processor.py:157} INFO - Started process (PID=2163) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:49:58.599+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:49:58.603+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:49:58.603+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:50:03.560+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:50:04.323+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:50:04.322+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:50:04.603+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:50:04.603+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:48:00+00:00, run_after=2025-08-19T13:51:00+00:00
+[2025-08-19T13:50:04.799+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 6.247 seconds
+[2025-08-19T13:50:36.062+0000] {processor.py:157} INFO - Started process (PID=2196) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:50:36.112+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:50:36.116+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:50:36.116+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:50:42.293+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:50:43.155+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:50:43.154+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:50:43.748+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:50:43.747+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:48:00+00:00, run_after=2025-08-19T13:51:00+00:00
+[2025-08-19T13:50:43.914+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 7.975 seconds
+[2025-08-19T13:51:15.005+0000] {processor.py:157} INFO - Started process (PID=2241) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:51:15.043+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:51:15.087+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:51:15.086+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:51:22.825+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:51:23.490+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:51:23.489+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:51:23.911+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:51:23.910+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:51:00+00:00, run_after=2025-08-19T13:54:00+00:00
+[2025-08-19T13:51:24.294+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 9.487 seconds
+[2025-08-19T13:51:55.434+0000] {processor.py:157} INFO - Started process (PID=2337) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:51:55.453+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:51:55.455+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:51:55.455+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:52:01.592+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:52:04.266+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:52:04.260+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T13:52:05.224+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:52:05.222+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T13:51:00+00:00, run_after=2025-08-19T13:54:00+00:00
+[2025-08-19T13:52:05.499+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 10.215 seconds
+[2025-08-19T13:52:36.833+0000] {processor.py:157} INFO - Started process (PID=2431) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:52:36.847+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:52:36.849+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:52:36.849+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:53:08.390+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:53:07.161+0000] {timeout.py:68} ERROR - Process timed out, PID: 2431
+[2025-08-19T13:53:13.018+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:53:08.773+0000] {dagbag.py:350} ERROR - Failed to import: /opt/airflow/dags/data_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 346, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/data_pipeline.py", line 4, in <module>
+    from pyspark.sql import SparkSession
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/__init__.py", line 54, in <module>
+    from pyspark.rdd import RDD, RDDBarrier
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/rdd.py", line 75, in <module>
+    from pyspark.statcounter import StatCounter
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/statcounter.py", line 25, in <module>
+    from numpy import maximum, minimum, sqrt
+  File "/home/airflow/.local/lib/python3.7/site-packages/numpy/__init__.py", line 163, in <module>
+    from . import ma
+  File "/home/airflow/.local/lib/python3.7/site-packages/numpy/ma/__init__.py", line 45, in <module>
+    from . import extras
+  File "<frozen importlib._bootstrap>", line 202, in _lock_unlock_module
+  File "<frozen importlib._bootstrap>", line 84, in acquire
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/data_pipeline.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.6.1/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.6.1/best-practices.html#reducing-dag-complexity, PID: 2431
+[2025-08-19T13:53:14.595+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:53:22.383+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 45.677 seconds
+[2025-08-19T13:55:33.651+0000] {processor.py:157} INFO - Started process (PID=2540) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T13:55:33.698+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T13:55:33.869+0000] {logging_mixin.py:149} INFO - [2025-08-19T13:55:33.823+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:19:08.266+0000] {processor.py:157} INFO - Started process (PID=170) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:19:08.273+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:19:08.275+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:19:08.275+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:19:09.101+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:19:09.439+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:19:09.438+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:19:09.488+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:19:09.487+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:15:00+00:00, run_after=2025-08-19T14:18:00+00:00
+[2025-08-19T14:19:09.524+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.274 seconds
+[2025-08-19T14:19:39.802+0000] {processor.py:157} INFO - Started process (PID=609) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:19:39.805+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:19:39.806+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:19:39.806+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:19:40.086+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:19:40.298+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:19:40.297+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:19:40.337+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:19:40.337+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:18:00+00:00, run_after=2025-08-19T14:21:00+00:00
+[2025-08-19T14:19:40.363+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 0.567 seconds
+[2025-08-19T14:20:11.370+0000] {processor.py:157} INFO - Started process (PID=745) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:20:11.377+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:20:11.383+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:20:11.380+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:20:12.032+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:20:12.514+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:20:12.513+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:20:12.625+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:20:12.625+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:18:00+00:00, run_after=2025-08-19T14:21:00+00:00
+[2025-08-19T14:20:12.688+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.344 seconds
+[2025-08-19T14:20:43.023+0000] {processor.py:157} INFO - Started process (PID=795) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:20:43.025+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:20:43.026+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:20:43.026+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:20:43.666+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:20:43.720+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:20:43.719+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:20:43.787+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:20:43.786+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:18:00+00:00, run_after=2025-08-19T14:21:00+00:00
+[2025-08-19T14:20:43.843+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 0.829 seconds
+[2025-08-19T14:21:14.279+0000] {processor.py:157} INFO - Started process (PID=1001) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:21:14.291+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:21:14.293+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:21:14.293+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:21:15.281+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:21:15.357+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:21:15.354+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:21:15.496+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:21:15.496+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:21:00+00:00, run_after=2025-08-19T14:24:00+00:00
+[2025-08-19T14:21:15.539+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.287 seconds
+[2025-08-19T14:21:46.020+0000] {processor.py:157} INFO - Started process (PID=1157) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:21:46.024+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:21:46.026+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:21:46.025+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:21:47.286+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:21:47.354+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:21:47.353+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:21:47.488+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:21:47.486+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:21:00+00:00, run_after=2025-08-19T14:24:00+00:00
+[2025-08-19T14:21:47.558+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.565 seconds
+[2025-08-19T14:22:17.899+0000] {processor.py:157} INFO - Started process (PID=1203) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:22:17.914+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:22:17.920+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:22:17.917+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:22:19.509+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:22:19.776+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:22:19.774+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:22:19.903+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:22:19.903+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:21:00+00:00, run_after=2025-08-19T14:24:00+00:00
+[2025-08-19T14:22:19.977+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 2.117 seconds
+[2025-08-19T14:22:50.575+0000] {processor.py:157} INFO - Started process (PID=1289) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:22:50.585+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:22:50.597+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:22:50.596+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:22:52.011+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:22:52.097+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:22:52.096+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:22:52.270+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:22:52.269+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:21:00+00:00, run_after=2025-08-19T14:24:00+00:00
+[2025-08-19T14:22:52.317+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.780 seconds
+[2025-08-19T14:23:23.039+0000] {processor.py:157} INFO - Started process (PID=1346) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:23:23.044+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:23:23.049+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:23:23.046+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:23:24.611+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:23:24.681+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:23:24.679+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:23:24.795+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:23:24.795+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:21:00+00:00, run_after=2025-08-19T14:24:00+00:00
+[2025-08-19T14:23:24.842+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.836 seconds
+[2025-08-19T14:23:55.530+0000] {processor.py:157} INFO - Started process (PID=1389) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:23:55.535+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:23:55.542+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:23:55.542+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:23:56.962+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:23:57.064+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:23:57.058+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:23:57.150+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:23:57.150+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:21:00+00:00, run_after=2025-08-19T14:24:00+00:00
+[2025-08-19T14:23:57.207+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.699 seconds
+[2025-08-19T14:24:27.984+0000] {processor.py:157} INFO - Started process (PID=1667) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:24:27.993+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:24:28.008+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:24:28.007+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:24:31.911+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:24:31.967+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:24:31.966+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:24:32.052+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:24:32.052+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:24:00+00:00, run_after=2025-08-19T14:27:00+00:00
+[2025-08-19T14:24:32.138+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 4.171 seconds
+[2025-08-19T14:25:02.347+0000] {processor.py:157} INFO - Started process (PID=1808) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:25:02.351+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:25:02.355+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:25:02.354+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:25:03.919+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:25:03.990+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:25:03.990+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:25:04.107+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:25:04.107+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:24:00+00:00, run_after=2025-08-19T14:27:00+00:00
+[2025-08-19T14:25:04.196+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.876 seconds
+[2025-08-19T14:25:34.660+0000] {processor.py:157} INFO - Started process (PID=1853) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:25:34.663+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:25:34.665+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:25:34.665+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:25:36.487+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:25:36.687+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:25:36.686+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:25:36.974+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:25:36.973+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:24:00+00:00, run_after=2025-08-19T14:27:00+00:00
+[2025-08-19T14:25:37.139+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 2.510 seconds
+[2025-08-19T14:26:08.018+0000] {processor.py:157} INFO - Started process (PID=1927) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:26:08.020+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:26:08.022+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:26:08.021+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:26:09.747+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:26:09.829+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:26:09.829+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:26:10.040+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:26:10.040+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:24:00+00:00, run_after=2025-08-19T14:27:00+00:00
+[2025-08-19T14:26:10.199+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 2.192 seconds
+[2025-08-19T14:26:41.006+0000] {processor.py:157} INFO - Started process (PID=1992) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:26:41.008+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:26:41.011+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:26:41.011+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:26:41.919+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:26:42.029+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:26:42.022+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:26:42.253+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:26:42.253+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:24:00+00:00, run_after=2025-08-19T14:27:00+00:00
+[2025-08-19T14:26:42.428+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.447 seconds
+[2025-08-19T14:27:13.144+0000] {processor.py:157} INFO - Started process (PID=2115) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:27:13.151+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:27:13.157+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:27:13.156+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:27:14.894+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:27:14.976+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:27:14.973+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:27:15.084+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:27:15.083+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:27:00+00:00, run_after=2025-08-19T14:30:00+00:00
+[2025-08-19T14:27:15.190+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 2.069 seconds
+[2025-08-19T14:27:45.766+0000] {processor.py:157} INFO - Started process (PID=2328) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:27:45.769+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:27:45.777+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:27:45.776+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:27:47.040+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:27:47.119+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:27:47.117+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:27:47.228+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:27:47.227+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:27:00+00:00, run_after=2025-08-19T14:30:00+00:00
+[2025-08-19T14:27:47.320+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.561 seconds
+[2025-08-19T14:28:17.839+0000] {processor.py:157} INFO - Started process (PID=2441) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:28:17.863+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:28:17.865+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:28:17.864+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:28:19.132+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:28:19.217+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:28:19.216+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:28:19.421+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:28:19.421+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:27:00+00:00, run_after=2025-08-19T14:30:00+00:00
+[2025-08-19T14:28:19.544+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.741 seconds
+[2025-08-19T14:28:49.962+0000] {processor.py:157} INFO - Started process (PID=2494) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:28:49.965+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:28:49.968+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:28:49.968+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:28:50.938+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:28:51.020+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:28:51.019+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:28:51.329+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:28:51.329+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:27:00+00:00, run_after=2025-08-19T14:30:00+00:00
+[2025-08-19T14:28:51.527+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.576 seconds
+[2025-08-19T14:29:21.821+0000] {processor.py:157} INFO - Started process (PID=2557) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:29:21.824+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:29:21.826+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:29:21.826+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:29:22.751+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:29:22.837+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:29:22.836+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:29:22.934+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:29:22.933+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:27:00+00:00, run_after=2025-08-19T14:30:00+00:00
+[2025-08-19T14:29:23.012+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.199 seconds
+[2025-08-19T14:29:53.372+0000] {processor.py:157} INFO - Started process (PID=2625) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:29:53.375+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:29:53.378+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:29:53.378+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:29:54.211+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:29:54.279+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:29:54.278+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:29:54.378+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:29:54.377+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:27:00+00:00, run_after=2025-08-19T14:30:00+00:00
+[2025-08-19T14:29:54.468+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.106 seconds
+[2025-08-19T14:30:25.041+0000] {processor.py:157} INFO - Started process (PID=2828) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:30:25.044+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:30:25.045+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:30:25.045+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:30:26.115+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:30:26.171+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:30:26.170+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:30:26.277+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:30:26.277+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:30:00+00:00, run_after=2025-08-19T14:33:00+00:00
+[2025-08-19T14:30:26.329+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.296 seconds
+[2025-08-19T14:30:56.611+0000] {processor.py:157} INFO - Started process (PID=2968) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:30:56.630+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:30:56.645+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:30:56.644+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:31:00.337+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:31:00.451+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:31:00.450+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:31:00.786+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:31:00.786+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:30:00+00:00, run_after=2025-08-19T14:33:00+00:00
+[2025-08-19T14:31:00.979+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 4.420 seconds
+[2025-08-19T14:31:31.369+0000] {processor.py:157} INFO - Started process (PID=3063) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:31:31.377+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:31:31.387+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:31:31.386+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:31:32.339+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:31:32.391+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:31:32.390+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:31:32.466+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:31:32.465+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:30:00+00:00, run_after=2025-08-19T14:33:00+00:00
+[2025-08-19T14:31:32.535+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.198 seconds
+[2025-08-19T14:32:03.021+0000] {processor.py:157} INFO - Started process (PID=3114) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:32:03.025+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:32:03.031+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:32:03.030+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:32:03.928+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:32:03.982+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:32:03.980+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:32:04.059+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:32:04.059+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:30:00+00:00, run_after=2025-08-19T14:33:00+00:00
+[2025-08-19T14:32:04.099+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.084 seconds
+[2025-08-19T14:32:34.656+0000] {processor.py:157} INFO - Started process (PID=3212) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:32:34.663+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:32:34.681+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:32:34.680+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:32:36.109+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:32:36.201+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:32:36.200+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:32:36.385+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:32:36.385+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:30:00+00:00, run_after=2025-08-19T14:33:00+00:00
+[2025-08-19T14:32:36.534+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.896 seconds
+[2025-08-19T14:33:07.348+0000] {processor.py:157} INFO - Started process (PID=3325) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:33:07.360+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:33:07.365+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:33:07.365+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:33:09.538+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:33:09.601+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:33:09.600+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:33:09.678+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:33:09.678+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:33:00+00:00, run_after=2025-08-19T14:36:00+00:00
+[2025-08-19T14:33:09.751+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 2.449 seconds
+[2025-08-19T14:33:40.012+0000] {processor.py:157} INFO - Started process (PID=3497) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:33:40.016+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:33:40.018+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:33:40.017+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:33:41.121+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:33:41.228+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:33:41.223+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:33:41.351+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:33:41.351+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:33:00+00:00, run_after=2025-08-19T14:36:00+00:00
+[2025-08-19T14:33:41.394+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.392 seconds
+[2025-08-19T14:34:11.637+0000] {processor.py:157} INFO - Started process (PID=3674) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:34:11.647+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:34:11.650+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:34:11.650+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:34:12.875+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:34:12.936+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:34:12.935+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:34:13.040+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:34:13.040+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:33:00+00:00, run_after=2025-08-19T14:36:00+00:00
+[2025-08-19T14:34:13.098+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.489 seconds
+[2025-08-19T14:34:43.701+0000] {processor.py:157} INFO - Started process (PID=3729) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:34:43.717+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:34:43.735+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:34:43.732+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:34:45.221+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:34:45.406+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:34:45.405+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:34:45.564+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:34:45.564+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:33:00+00:00, run_after=2025-08-19T14:36:00+00:00
+[2025-08-19T14:34:45.659+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 1.970 seconds
+[2025-08-19T14:35:15.907+0000] {processor.py:157} INFO - Started process (PID=3791) to work on /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:35:15.910+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/data_pipeline.py for tasks to queue
+[2025-08-19T14:35:15.942+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:35:15.941+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:35:17.517+0000] {processor.py:836} INFO - DAG(s) dict_keys(['nitro_data_pipeline']) retrieved from /opt/airflow/dags/data_pipeline.py
+[2025-08-19T14:35:17.586+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:35:17.585+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T14:35:17.755+0000] {logging_mixin.py:149} INFO - [2025-08-19T14:35:17.754+0000] {dag.py:3490} INFO - Setting next_dagrun for nitro_data_pipeline to 2025-08-19T14:33:00+00:00, run_after=2025-08-19T14:36:00+00:00
+[2025-08-19T14:35:17.914+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/data_pipeline.py took 2.021 seconds

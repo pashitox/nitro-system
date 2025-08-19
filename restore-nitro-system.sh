@@ -1,3 +1,93 @@
+#!/bin/bash
+# restore-nitro-system.sh
+
+echo "🔧 Restaurando y ejecutando el sistema Nitro localmente..."
+
+# 1. Verificar que todos los directorios existen
+DIRECTORIES=(
+  "airflow"
+  "airflow/dags"
+  "airflow/logs"
+  "spark-processing"
+  "postgres-setup"
+  "minio-setup"
+  "python-processor"
+  "api-dashboard/dashboards"
+)
+
+for dir in "${DIRECTORIES[@]}"; do
+  if [ ! -d "$dir" ]; then
+    echo "⚠️  Creando directorio faltante: $dir"
+    mkdir -p "$dir"
+  fi
+done
+
+# 2. Crear archivos esenciales si no existen
+
+# Archivo de inicialización de PostgreSQL
+if [ ! -f "./postgres-setup/init.sql" ]; then
+  echo "📝 Creando init.sql para PostgreSQL..."
+  cat > ./postgres-setup/init.sql << 'EOF'
+CREATE TABLE IF NOT EXISTS sensor_data (
+    id SERIAL PRIMARY KEY,
+    sensor_id VARCHAR(50) NOT NULL,
+    value FLOAT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_sensor_id ON sensor_data(sensor_id);
+CREATE INDEX IF NOT EXISTS idx_timestamp ON sensor_data(timestamp);
+EOF
+fi
+
+# Script de configuración de MinIO
+if [ ! -f "./minio-setup/create-bucket.sh" ]; then
+  echo "📝 Creando create-bucket.sh para MinIO..."
+  cat > ./minio-setup/create-bucket.sh << 'EOF'
+#!/bin/sh
+until (/usr/bin/mc config host add minio http://minio:9000 admin admin12345) do echo 'Waiting for minio...' && sleep 1; done;
+/usr/bin/mc mb minio/raw-data;
+/usr/bin/mc policy set public minio/raw-data;
+echo 'Minio configured successfully';
+EOF
+  chmod +x ./minio-setup/create-bucket.sh
+fi
+
+# Dockerfile para Streamlit si no existe
+if [ ! -f "./api-dashboard/dashboards/Dockerfile" ]; then
+  echo "📝 Creando Dockerfile para Streamlit..."
+  cat > ./api-dashboard/dashboards/Dockerfile << 'EOF'
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8501
+
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+
+ENTRYPOINT ["streamlit", "run", "monitoring_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+EOF
+fi
+
+# Requirements para Streamlit
+if [ ! -f "./api-dashboard/dashboards/requirements.txt" ]; then
+  echo "📝 Creando requirements.txt para Streamlit..."
+  cat > ./api-dashboard/dashboards/requirements.txt << 'EOF'
+streamlit==1.22.0
+pandas==1.5.3
+plotly==5.13.0
+sqlalchemy==1.4.46
+psycopg2-binary==2.9.5
+EOF
+fi
+
+# 3. Crear aplicación Streamlit con la conexión correcta
+echo "📝 Creando aplicación Streamlit..."
+cat > ./api-dashboard/dashboards/monitoring_app.py << 'EOF'
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -134,3 +224,28 @@ def main():
 
 if __name__ == "__main__":
     main()
+EOF
+
+# 4. Iniciar el sistema
+echo "🚀 Iniciando el sistema Nitro..."
+docker compose down
+docker compose up --build -d
+
+echo "⏳ Esperando a que los servicios se inicien..."
+sleep 10
+
+# 5. Verificar el estado de los servicios
+echo "🔍 Verificando el estado de los servicios..."
+docker compose ps
+
+echo "✅ Sistema Nitro iniciado correctamente!"
+echo ""
+echo "🌐 URLs de acceso:"
+echo "   - Streamlit Dashboard: http://localhost:8501"
+echo "   - Airflow: http://localhost:8080"
+echo "   - MinIO Console: http://localhost:9001"
+echo "   - Grafana: http://localhost:3000"
+echo "   - Spark Master: http://localhost:8081"
+echo ""
+echo "📝 Para ver los logs de un servicio: docker-compose logs [nombre_servicio]"
+echo "🛑 Para detener el sistema: docker-compose down"

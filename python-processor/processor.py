@@ -1,13 +1,11 @@
-import json
 from kafka import KafkaConsumer
+import json
 import psycopg2
-from psycopg2 import OperationalError
 from datetime import datetime
 import os
 import time
 import logging
 from minio import Minio
-from minio.error import S3Error
 import io
 
 # Configuración de logging
@@ -17,180 +15,172 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Configuración de Kafka
-KAFKA_BROKERS = os.getenv('KAFKA_BROKERS', 'kafka:9092').split(',')
-TOPIC = os.getenv('TOPIC', 'sensor_topic')
-GROUP_ID = os.getenv('GROUP_ID', 'python-processor-group')
-
-# Configuración de PostgreSQL
+# Configuración para PRODUCCIÓN (localhost)
+KAFKA_BROKERS = os.getenv('KAFKA_BROKERS', 'localhost:29092').split(',')
 POSTGRES_CONFIG = {
-    'host': os.getenv('POSTGRES_HOST', 'postgres'),
+    'host': os.getenv('POSTGRES_HOST', 'localhost'),
     'database': os.getenv('POSTGRES_DB', 'nitro_db'),
     'user': os.getenv('POSTGRES_USER', 'nitro_user'),
-    'password': os.getenv('POSTGRES_PASSWORD', 'nitro_pass')
+    'password': os.getenv('POSTGRES_PASSWORD', 'nitro_pass'),
+    'port': os.getenv('POSTGRES_PORT', '5432')
+}
+MINIO_CONFIG = {
+    'endpoint': os.getenv('MINIO_ENDPOINT', 'localhost:9000'),
+    'access_key': os.getenv('MINIO_ACCESS_KEY', 'admin'),
+    'secret_key': os.getenv('MINIO_SECRET_KEY', 'admin12345'),
+    'bucket': os.getenv('MINIO_BUCKET_NAME', 'raw-data'),
+    'secure': False
 }
 
-# Configuración de MinIO
-MINIO_ENDPOINT = os.getenv('MINIO_ENDPOINT', 'minio:9000')
-MINIO_ACCESS_KEY = os.getenv('MINIO_ACCESS_KEY', 'admin')
-MINIO_SECRET_KEY = os.getenv('MINIO_SECRET_KEY', 'admin12345')
-MINIO_BUCKET_NAME = os.getenv('MINIO_BUCKET_NAME', 'raw-data')
+def wait_for_services():
+    """Esperar a que los servicios estén disponibles"""
+    logger.info("⏳ Esperando que servicios estén listos...")
+    time.sleep(10)
 
-def create_postgres_connection(max_retries=5, delay=5):
-    """Crea una conexión a PostgreSQL con reintentos"""
+def create_postgres_connection():
+    """Crear conexión a PostgreSQL"""
+    max_retries = 5
     for attempt in range(max_retries):
         try:
             conn = psycopg2.connect(**POSTGRES_CONFIG)
-            logger.info("Conexión a PostgreSQL establecida")
+            logger.info("✅ Conexión PostgreSQL establecida")
             return conn
-        except OperationalError as e:
+        except Exception as e:
             if attempt == max_retries - 1:
+                logger.error(f"❌ Error PostgreSQL después de {max_retries} intentos: {e}")
                 raise
-            logger.warning(f"Intento {attempt + 1} de {max_retries}: No se pudo conectar a PostgreSQL. Reintentando en {delay} segundos...")
-            time.sleep(delay)
-
-def ensure_table_exists(conn):
-    """Asegura que la tabla exista con los índices adecuados"""
-    with conn.cursor() as cur:
-        cur.execute("""
-            CREATE TABLE IF NOT EXISTS sensor_data (
-                id SERIAL PRIMARY KEY,
-                sensor_id VARCHAR(50) NOT NULL,
-                value FLOAT NOT NULL,
-                timestamp TIMESTAMP WITH TIME ZONE NOT NULL,
-                processed_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-            );
-
-            CREATE INDEX IF NOT EXISTS idx_sensor_id ON sensor_data(sensor_id);
-            CREATE INDEX IF NOT EXISTS idx_timestamp ON sensor_data(timestamp);
-        """)
-        conn.commit()
-    logger.info("Tabla sensor_data verificada/creada")
-
-def convert_timestamp(timestamp):
-    """Convierte el timestamp a formato datetime"""
-    try:
-        if isinstance(timestamp, (int, float)):
-            return datetime.fromtimestamp(timestamp)
-        elif isinstance(timestamp, str):
-            try:
-                return datetime.fromisoformat(timestamp)
-            except ValueError:
-                return datetime.fromtimestamp(float(timestamp))
-        return timestamp
-    except Exception as e:
-        logger.error(f"Error convirtiendo timestamp {timestamp}: {e}")
-        raise ValueError(f"Formato de timestamp no válido: {timestamp}")
+            logger.warning(f"⚠️  Intento {attempt + 1}/{max_retries}: Error PostgreSQL. Reintentando en 5s...")
+            time.sleep(5)
 
 def create_minio_client():
-    """Crea y retorna un cliente de MinIO"""
-    return Minio(
-        MINIO_ENDPOINT,
-        access_key=MINIO_ACCESS_KEY,
-        secret_key=MINIO_SECRET_KEY,
-        secure=False
-    )
+    """Crear cliente MinIO"""
+    try:
+        client = Minio(
+            MINIO_CONFIG['endpoint'],
+            access_key=MINIO_CONFIG['access_key'],
+            secret_key=MINIO_CONFIG['secret_key'],
+            secure=MINIO_CONFIG['secure']
+        )
+        # Verificar conexión
+        client.list_buckets()
+        logger.info("✅ Cliente MinIO creado")
+        return client
+    except Exception as e:
+        logger.error(f"❌ Error MinIO: {e}")
+        return None
+
+def create_kafka_consumer():
+    """Crear consumer de Kafka"""
+    max_retries = 5
+    for attempt in range(max_retries):
+        try:
+            consumer = KafkaConsumer(
+                'sensor_topic',
+                bootstrap_servers=KAFKA_BROKERS,
+                auto_offset_reset='earliest',
+                group_id='processor-group',
+                value_deserializer=lambda x: json.loads(x.decode('utf-8')),
+                consumer_timeout_ms=10000
+            )
+            logger.info("✅ Consumer Kafka creado")
+            return consumer
+        except Exception as e:
+            if attempt == max_retries - 1:
+                logger.error(f"❌ Error Kafka después de {max_retries} intentos: {e}")
+                raise
+            logger.warning(f"⚠️  Intento {attempt + 1}/{max_retries}: Error Kafka. Reintentando en 5s...")
+            time.sleep(5)
+
+def ensure_table_exists(conn):
+    """Asegurar que la tabla existe"""
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS sensor_data (
+                    id SERIAL PRIMARY KEY,
+                    sensor_id VARCHAR(50) NOT NULL,
+                    value FLOAT NOT NULL,
+                    timestamp TIMESTAMP WITH TIME ZONE NOT NULL,
+                    processed_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+                )
+            """)
+            conn.commit()
+        logger.info("✅ Tabla sensor_data verificada")
+    except Exception as e:
+        logger.error(f"❌ Error creando tabla: {e}")
 
 def save_to_minio(client, data):
-    """Guarda datos en bruto en MinIO como archivo JSON"""
+    """Guardar datos en MinIO"""
     try:
         object_name = f"sensor_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}.json"
-        data_str = json.dumps(data)
-        data_bytes = data_str.encode('utf-8')
-        data_stream = io.BytesIO(data_bytes)
-
+        data_bytes = json.dumps(data).encode('utf-8')
         client.put_object(
-            MINIO_BUCKET_NAME,
+            MINIO_CONFIG['bucket'],
             object_name,
-            data_stream,
-            length=len(data_bytes),
+            io.BytesIO(data_bytes),
+            len(data_bytes),
             content_type='application/json'
         )
+        logger.info(f"💾 Guardado en MinIO: {object_name}")
         return True
-    except S3Error as e:
-        logger.error(f"Error guardando en MinIO: {e}")
+    except Exception as e:
+        logger.error(f"❌ Error MinIO: {e}")
         return False
 
-def process_message(msg, conn, minio_client):
-    """Procesa un mensaje de Kafka, guarda en MinIO y luego en PostgreSQL"""
+def process_message(data, conn, minio_client):
+    """Procesar un mensaje"""
     try:
-        # Decodificar el mensaje
-        data = msg.value if isinstance(msg.value, dict) else json.loads(msg.value)
-
-        # 1. Guardar en MinIO (datos brutos)
-        if not save_to_minio(minio_client, data):
-            raise Exception("Error al guardar en MinIO")
-
-        # 2. Validación de datos
-        required_fields = ['sensor_id', 'value', 'timestamp']
-        if not all(field in data for field in required_fields):
-            raise ValueError(f"Faltan campos requeridos en el mensaje: {data}")
-
-        # 3. Convertir timestamp
-        timestamp = convert_timestamp(data['timestamp'])
-
-        # 4. Insertar en PostgreSQL
+        # Guardar en MinIO
+        if minio_client:
+            save_to_minio(minio_client, data)
+        
+        # Insertar en PostgreSQL
         with conn.cursor() as cur:
             cur.execute("""
                 INSERT INTO sensor_data (sensor_id, value, timestamp)
                 VALUES (%s, %s, %s)
-            """, (
-                str(data['sensor_id']),
-                float(data['value']),
-                timestamp
-            ))
+            """, (data['sensor_id'], data['value'], data['timestamp']))
             conn.commit()
-
-        logger.info(f"Dato insertado: {data['sensor_id']}, {data['value']}, {timestamp}")
-
+        
+        logger.info(f"�� Procesado: {data['sensor_id']} - {data['value']}")
+        
     except Exception as e:
-        logger.error(f"Error procesando mensaje: {e}\nMensaje: {msg.value if hasattr(msg, 'value') else msg}")
-        conn.rollback()
-
-def create_kafka_consumer():
-    """Crea un consumidor de Kafka con configuración robusta"""
-    for attempt in range(5):
-        try:
-            consumer = KafkaConsumer(
-                TOPIC,
-                bootstrap_servers=KAFKA_BROKERS,
-                auto_offset_reset='earliest',
-                group_id=GROUP_ID,
-                enable_auto_commit=True,
-                auto_commit_interval_ms=5000,
-                value_deserializer=lambda x: json.loads(x.decode('utf-8'))
-            )
-            logger.info("Consumer de Kafka creado exitosamente")
-            return consumer
-        except Exception as e:
-            if attempt == 4:
-                raise
-            logger.warning(f"Intento {attempt + 1} de 5: Error creando consumer. Reintentando...")
-            time.sleep(5)
+        logger.error(f"❌ Error procesando mensaje: {e}")
+        if conn:
+            conn.rollback()
 
 def main():
-    logger.info("Iniciando procesador de datos...")
-
-    # Esperar inicialización de servicios
-    time.sleep(15)
-
-    # Configurar conexiones
-    pg_conn = create_postgres_connection()
-    ensure_table_exists(pg_conn)
-    consumer = create_kafka_consumer()
-    minio_client = create_minio_client()
-
-    logger.info("Listo para procesar mensajes...")
-
+    logger.info("🚀 Iniciando Processor en modo producción")
+    wait_for_services()
+    
     try:
-        for msg in consumer:
-            process_message(msg, pg_conn, minio_client)
+        # Inicializar conexiones
+        pg_conn = create_postgres_connection()
+        minio_client = create_minio_client()
+        consumer = create_kafka_consumer()
+        
+        ensure_table_exists(pg_conn)
+        
+        logger.info("📡 Escuchando mensajes de Kafka...")
+        
+        message_count = 0
+        for message in consumer:
+            message_count += 1
+            process_message(message.value, pg_conn, minio_client)
+            
+            if message_count % 10 == 0:
+                logger.info(f"📊 Mensajes procesados: {message_count}")
+                
     except KeyboardInterrupt:
-        logger.info("\n🛑 Consumer detenido")
+        logger.info("🛑 Processor detenido por usuario")
+    except Exception as e:
+        logger.error(f"💥 Error crítico: {e}")
     finally:
-        consumer.close()
-        pg_conn.close()
-        logger.info("Conexiones cerradas")
+        if 'pg_conn' in locals():
+            pg_conn.close()
+        if 'consumer' in locals():
+            consumer.close()
+        logger.info("👋 Processor finalizado")
 
 if __name__ == "__main__":
     main()

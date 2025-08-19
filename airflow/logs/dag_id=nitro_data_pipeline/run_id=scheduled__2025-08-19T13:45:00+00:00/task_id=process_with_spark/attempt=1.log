@@ -1,0 +1,64 @@
+[2025-08-19T13:48:17.746+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-19T13:45:00+00:00 [queued]>
+[2025-08-19T13:48:17.926+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-19T13:45:00+00:00 [queued]>
+[2025-08-19T13:48:17.939+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2025-08-19T13:48:18.211+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): process_with_spark> on 2025-08-19 13:45:00+00:00
+[2025-08-19T13:48:18.436+0000] {standard_task_runner.py:57} INFO - Started process 1902 to run task
+[2025-08-19T13:48:18.461+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'nitro_data_pipeline', 'process_with_spark', 'scheduled__2025-08-19T13:45:00+00:00', '--job-id', '294', '--raw', '--subdir', 'DAGS_FOLDER/data_pipeline.py', '--cfg-path', '/tmp/tmpxjdn53y7']
+[2025-08-19T13:48:18.492+0000] {standard_task_runner.py:85} INFO - Job 294: Subtask process_with_spark
+[2025-08-19T13:48:19.280+0000] {task_command.py:410} INFO - Running <TaskInstance: nitro_data_pipeline.process_with_spark scheduled__2025-08-19T13:45:00+00:00 [running]> on host 0582fa07e867
+[2025-08-19T13:48:20.836+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nitro_data_pipeline' AIRFLOW_CTX_TASK_ID='process_with_spark' AIRFLOW_CTX_EXECUTION_DATE='2025-08-19T13:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-19T13:45:00+00:00'
+[2025-08-19T13:48:20.854+0000] {logging_mixin.py:149} INFO - ===== INICIANDO PROCESO DE SPARK =====
+[2025-08-19T13:50:03.765+0000] {logging_mixin.py:149} INFO - ===== LEYENDO JSON DESDE MINIO =====
+[2025-08-19T13:56:21.101+0000] {local_task_job_runner.py:292} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-08-19T13:56:21.176+0000] {process_utils.py:135} INFO - Sending Signals.SIGTERM to group 1902. PIDs of all processes in the group: [1905, 1913, 1902]
+[2025-08-19T13:56:21.177+0000] {process_utils.py:86} INFO - Sending the signal Signals.SIGTERM to group 1902
+[2025-08-19T13:56:21.178+0000] {taskinstance.py:1517} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-08-19T13:56:21.209+0000] {clientserver.py:538} INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1519, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-08-19T13:56:21.304+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-08-19T13:56:21.305+0000] {java_gateway.py:1056} ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1519, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 540, in send_command
+    "Error while sending or receiving", e, proto.ERROR_ON_RECEIVE)
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+[2025-08-19T13:56:21.324+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-08-19T13:56:21.325+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_pipeline.py", line 24, in process_with_spark
+    df = spark.read.json("s3a://raw-data/*.json")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/readwriter.py", line 284, in json
+    return self._df(self._jreader.json(self._spark._sc._jvm.PythonUtils.toSeq(path)))
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/utils.py", line 190, in deco
+    return f(*a, **kw)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/protocol.py", line 336, in get_return_value
+    format(target_id, ".", name))
+py4j.protocol.Py4JError: An error occurred while calling o31.json
+[2025-08-19T13:56:21.960+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=nitro_data_pipeline, task_id=process_with_spark, execution_date=20250819T134500, start_date=20250819T134817, end_date=20250819T135621
+[2025-08-19T13:56:22.235+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 294 for task process_with_spark (An error occurred while calling o31.json; 1902)
+[2025-08-19T13:56:22.616+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1902, status='terminated', exitcode=1, started='13:48:18') (1902) terminated with exit code 1

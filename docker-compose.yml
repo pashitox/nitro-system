@@ -161,6 +161,14 @@ services:
     depends_on:
       - postgres
 
+ kafka-producer:
+    build: ./kafka-producer
+    container_name: proyecto-nitro-kafka-producer
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped     
+
 
 volumes:
   postgres_data:
