@@ -1,7 +1,5 @@
-streamlit
+sycopg2-binary==2.9.6
 pandas
+streamlit
 plotly
-requests
-
-
-
+sqlalchemy

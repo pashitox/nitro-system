@@ -1,13 +1,18 @@
-
+version: '3.8'
 
 services:
   streamlit:
+    build: 
+      context: ./api-dashboard/dashboards
+      dockerfile: Dockerfile
     image: ghcr.io/pashitox/nitro-system:latest
     ports:
       - "8501:8501"
     restart: always
     depends_on:
       - postgres
+    environment:
+      - DATABASE_URL=postgresql://nitro_user:nitro_pass@postgres:5432/nitro_db
 
   postgres:
     image: postgres:13
@@ -23,6 +28,8 @@ services:
     image: grafana/grafana:latest
     ports:
       - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
     restart: always
     depends_on:
       - postgres

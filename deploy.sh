@@ -1,35 +1,51 @@
 #!/bin/bash
 
+# Configurar variables
+export GITHUB_TOKEN="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"
+REPO_DIR="/home/user/proyecto-nitro"
+
+cd $REPO_DIR
+
 # Configurar Git
 git config --global user.email "pashitox@users.noreply.github.com"
 git config --global user.name "pashitox"
 
-# Inicializar y subir el repositorio
-git init
-git remote add origin https://github.com/pashitox/nitro-system.git
+# Inicializar repositorio si no existe
+if [ ! -d ".git" ]; then
+    git init
+    git remote add origin https://github.com/pashitox/nitro-system.git
+fi
+
+# Hacer commit
 git add .
-git commit -m "Initial commit: Nitro System deployment"
-git branch -M main
-git push -u origin main
+git commit -m "Deploy $(date '+%Y-%m-%d %H:%M:%S')" || true
 
-# Construir y subir las imágenes
-export GITHUB_TOKEN="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"
+# Forzar push si es necesario
+git push -f origin main || echo "Push falló, continuando con build..."
 
-# Login a GitHub Container Registry
-echo $GITHUB_TOKEN | docker login ghcr.io -u pashitox --password-stdin
+# Login a Docker
+echo "$GITHUB_TOKEN" | docker login ghcr.io -u pashitox --password-stdin
 
-# Construir imágenes
+# Construir y taggear
 docker compose -f docker-compose.prod.yml build
 
-# Taggear correctamente
-docker tag streamlit ghcr.io/pashitox/nitro-system:latest
+# Obtener el nombre correcto de la imagen construida
+IMAGE_ID=$(docker images -q nitro-system-streamlit)
 
-# Subir imágenes
-docker push ghcr.io/pashitox/nitro-system:latest
+if [ ! -z "$IMAGE_ID" ]; then
+    docker tag $IMAGE_ID ghcr.io/pashitox/nitro-system:latest
+    docker push ghcr.io/pashitox/nitro-system:latest
+else
+    echo "⚠️  No se encontró la imagen construida. Construyendo directamente..."
+    docker build -t ghcr.io/pashitox/nitro-system:latest ./api-dashboard/dashboards
+    docker push ghcr.io/pashitox/nitro-system:latest
+fi
 
-# Desplegar
+# Detener y desplegar
+docker compose -f docker-compose.prod.yml down
 docker compose -f docker-compose.prod.yml up -d
 
 echo "✅ Despliegue completado!"
-echo "📊 Streamlit disponible en: http://localhost:8501"
-echo "📈 Grafana disponible en: http://localhost:3000"
+echo "📊 Streamlit: http://localhost:8501"
+echo "📈 Grafana: http://localhost:3000"
+echo "🐘 PostgreSQL: localhost:5432"
