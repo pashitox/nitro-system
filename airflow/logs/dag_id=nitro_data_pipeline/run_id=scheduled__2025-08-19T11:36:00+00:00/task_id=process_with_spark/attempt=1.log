@@ -9,3 +9,34 @@
 [2025-08-19T11:39:03.396+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='nitro_data_pipeline' AIRFLOW_CTX_TASK_ID='process_with_spark' AIRFLOW_CTX_EXECUTION_DATE='2025-08-19T11:36:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-19T11:36:00+00:00'
 [2025-08-19T11:39:03.398+0000] {logging_mixin.py:149} INFO - ===== INICIANDO PROCESO DE SPARK =====
 [2025-08-19T11:39:23.679+0000] {logging_mixin.py:149} INFO - ===== LEYENDO JSON DESDE MINIO =====
+[2025-08-19T11:41:44.969+0000] {logging_mixin.py:149} INFO - Registros leídos: 11835
+[2025-08-19T11:41:44.986+0000] {logging_mixin.py:149} INFO - root
+ |-- sensor_id: string (nullable = true)
+ |-- timestamp: string (nullable = true)
+ |-- value: double (nullable = true)
+[2025-08-19T11:41:45.718+0000] {logging_mixin.py:149} INFO - +---------+--------------------+-----+
+|sensor_id|           timestamp|value|
++---------+--------------------+-----+
+| sensor_1|2025-08-18T18:51:...|20.56|
+| sensor_4|2025-08-18T18:51:...|25.16|
+| sensor_0|2025-08-18T18:51:...|28.27|
+| sensor_3|2025-08-18T18:50:...|27.02|
+| sensor_3|2025-08-18T18:50:...|27.84|
++---------+--------------------+-----+
+only showing top 5 rows
+[2025-08-19T11:41:45.774+0000] {logging_mixin.py:149} INFO - ===== CALCULANDO PROMEDIOS =====
+[2025-08-19T11:42:05.588+0000] {logging_mixin.py:149} INFO - +---------+------------------+
+|sensor_id|         avg_value|
++---------+------------------+
+| sensor_0|24.929506618531892|
+| sensor_1|24.989405267629568|
+| sensor_4| 24.92669696969697|
+| sensor_2| 25.02708661417322|
+| sensor_3|25.032311872909716|
++---------+------------------+
+[2025-08-19T11:42:05.588+0000] {logging_mixin.py:149} INFO - ===== GUARDANDO RESULTADOS EN POSTGRES =====
+[2025-08-19T11:42:28.880+0000] {logging_mixin.py:149} INFO - ===== PROCESO COMPLETADO CON ÉXITO =====
+[2025-08-19T11:42:28.881+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-08-19T11:42:28.912+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=nitro_data_pipeline, task_id=process_with_spark, execution_date=20250819T113600, start_date=20250819T113902, end_date=20250819T114228
+[2025-08-19T11:42:29.042+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2025-08-19T11:42:29.146+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

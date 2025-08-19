@@ -1,5 +1,5 @@
-sycopg2-binary==2.9.6
-pandas
-streamlit
-plotly
-sqlalchemy
+streamlit==1.28.0
+pandas==2.0.3
+plotly==5.15.0
+sqlalchemy==2.0.20
+ppsycopg2-binary==2.9.7  # ← CORREGIDO: "psycopg2" no "sycopg2"
