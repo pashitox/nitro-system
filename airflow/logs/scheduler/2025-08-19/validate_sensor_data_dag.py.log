@@ -4272,3 +4272,25 @@ Please take a look at these docs to improve your DAG import time:
 * https://airflow.apache.org/docs/apache-airflow/2.6.1/best-practices.html#reducing-dag-complexity, PID: 22437
 [2025-08-19T16:06:32.345+0000] {processor.py:838} WARNING - No viable dags retrieved from /opt/airflow/dags/validate_sensor_data_dag.py
 [2025-08-19T16:06:32.506+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/validate_sensor_data_dag.py took 30.476 seconds
+[2025-08-19T16:07:03.314+0000] {processor.py:157} INFO - Started process (PID=22657) to work on /opt/airflow/dags/validate_sensor_data_dag.py
+[2025-08-19T16:07:03.385+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/validate_sensor_data_dag.py for tasks to queue
+[2025-08-19T16:07:03.406+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:07:03.405+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/validate_sensor_data_dag.py
+[2025-08-19T16:07:21.194+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:07:21.191+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:109: UserWarning: You have an incompatible version of 'pyarrow' installed (9.0.0), please install a version that adheres to: 'pyarrow<10.1.0,>=10.0.1; extra == "pandas"'
+  "pyarrow", installed_pyarrow_version, pandas_pyarrow_extra
+[2025-08-19T16:07:28.198+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:07:28.198+0000] {warnings.py:110} WARNING - /opt/airflow/dags/validate_sensor_data_dag.py:11: RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead. 
+  tags=["validation", "simple"],
+[2025-08-19T16:07:28.241+0000] {processor.py:836} INFO - DAG(s) dict_keys(['validate_sensor_data']) retrieved from /opt/airflow/dags/validate_sensor_data_dag.py
+[2025-08-19T16:07:28.411+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:07:28.411+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T16:07:28.505+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:07:28.505+0000] {dag.py:3490} INFO - Setting next_dagrun for validate_sensor_data to 2025-08-19T16:06:00+00:00, run_after=2025-08-19T16:09:00+00:00
+[2025-08-19T16:07:28.588+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/validate_sensor_data_dag.py took 25.405 seconds
+[2025-08-19T16:07:59.451+0000] {processor.py:157} INFO - Started process (PID=22791) to work on /opt/airflow/dags/validate_sensor_data_dag.py
+[2025-08-19T16:07:59.481+0000] {processor.py:826} INFO - Processing file /opt/airflow/dags/validate_sensor_data_dag.py for tasks to queue
+[2025-08-19T16:07:59.483+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:07:59.482+0000] {dagbag.py:541} INFO - Filling up the DagBag from /opt/airflow/dags/validate_sensor_data_dag.py
+[2025-08-19T16:08:19.691+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:08:19.689+0000] {warnings.py:110} WARNING - /home/airflow/.local/lib/python3.7/site-packages/snowflake/connector/options.py:109: UserWarning: You have an incompatible version of 'pyarrow' installed (9.0.0), please install a version that adheres to: 'pyarrow<10.1.0,>=10.0.1; extra == "pandas"'
+  "pyarrow", installed_pyarrow_version, pandas_pyarrow_extra
+[2025-08-19T16:08:26.829+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:08:26.828+0000] {warnings.py:110} WARNING - /opt/airflow/dags/validate_sensor_data_dag.py:11: RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead. 
+  tags=["validation", "simple"],
+[2025-08-19T16:08:26.853+0000] {processor.py:836} INFO - DAG(s) dict_keys(['validate_sensor_data']) retrieved from /opt/airflow/dags/validate_sensor_data_dag.py
+[2025-08-19T16:08:27.172+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:08:27.171+0000] {dag.py:2726} INFO - Sync 1 DAGs
+[2025-08-19T16:08:27.279+0000] {logging_mixin.py:149} INFO - [2025-08-19T16:08:27.278+0000] {dag.py:3490} INFO - Setting next_dagrun for validate_sensor_data to 2025-08-19T16:06:00+00:00, run_after=2025-08-19T16:09:00+00:00
+[2025-08-19T16:08:27.348+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/validate_sensor_data_dag.py took 27.936 seconds

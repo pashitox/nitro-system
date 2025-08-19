@@ -1,29 +1,29 @@
-# 🚀 Proyecto Nitro - Sistema de Monitoreo Predictivo Industrial
+# 🚀 Nitro Project - Industrial Predictive Monitoring System
 
-## 📋 Tabla de Contenidos
-1. [Características](#-características)
-2. [Arquitectura del Sistema](#-arquitectura-del-sistema)
-3. [Servicios y Puertos](#-servicios-y-puertos)
+## 📋 Table of Contents
+1. [Features](#-features)
+2. [System Architecture](#-system-architecture)
+3. [Services and Ports](#-services-and-ports)
 4. [Quick Start](#-quick-start)
-5. [Estructura del Proyecto](#-estructura-del-proyecto)
-6. [Notebooks de Análisis](#-notebooks-de-análisis)
-7. [Flujo de Datos](#-flujo-de-datos)
-8. [Tecnologías Implementadas](#-tecnologías-implementadas)
-9. [Mantenimiento](#-mantenimiento)
+5. [Project Structure](#-project-structure)
+6. [Analysis Notebooks](#-analysis-notebooks)
+7. [Data Flow](#-data-flow)
+8. [Implemented Technologies](#-implemented-technologies)
+9. [Maintenance](#-maintenance)
 10. [Troubleshooting](#-troubleshooting)
 
-## ✨ Características
+## ✨ Features
 
-- 📊 **Ingesta de datos en tiempo real** con Kafka Producer
-- ⚡ **Procesamiento distribuido** con Spark Streaming
-- 🔧 **Orquestación inteligente** con Apache Airflow
-- 💾 **Almacenamiento escalable** en PostgreSQL y MinIO
-- 🤖 **MLOps avanzado** con MLflow y SHAP
-- 📈 **Visualización profesional** con Streamlit y Grafana
-- 📓 **Análisis exhaustivo** con notebooks especializados
-- 🔍 **Monitoreo en tiempo real** con dashboards interactivos
+- 📊 **Real-time data ingestion** with Kafka Producer
+- ⚡ **Distributed processing** with Spark Streaming
+- 🔧 **Intelligent orchestration** with Apache Airflow
+- 💾 **Scalable storage** in PostgreSQL and MinIO
+- 🤖 **Advanced MLOps** with MLflow and SHAP
+- 📈 **Professional visualization** with Streamlit and Grafana
+- 📓 **Comprehensive analysis** with specialized notebooks
+- 🔍 **Real-time monitoring** with interactive dashboards
 
-## 🏗️ Arquitectura del Sistema
+## 🏗️ System Architecture
 
 ```mermaid
 graph LR
@@ -38,56 +38,56 @@ F --> H[Grafana Monitoring]
 D --> H
 ```
 
-## 🌐 Servicios y Puertos
+## 🌐 Services and Ports
 
-| Servicio | URL | Puerto | Credenciales | Estado |
+| Service | URL | Port | Credentials | Status |
 |----------|-----|--------|--------------|--------|
-| 🔧 **Airflow** | http://localhost:8080 | 8080 | admin/admin | ✅ Operativo |
-| ⚡ **Spark Master** | http://localhost:8081 | 8081 | - | ✅ Operativo |
-| 📊 **Streamlit Dashboard** | http://localhost:8501 | 8501 | - | ✅ Operativo |
-| 📈 **Grafana** | http://localhost:3000 | 3000 | admin/admin123 | ✅ Operativo |
-| 💾 **MinIO Console** | http://localhost:9001 | 9001 | admin/admin12345 | ✅ Operativo |
-| 🗄️ **PostgreSQL** | localhost:5432 | 5432 | nitro_user/nitro_pass | ✅ Operativo |
-| 🚀 **FastAPI** | http://localhost:8000 | 8000 | - | ✅ Operativo |
-| 📡 **Kafka** | localhost:9092 | 9092/29092 | - | ✅ Operativo |
+| 🔧 **Airflow** | http://localhost:8080 | 8080 | admin/admin | ✅ Operational |
+| ⚡ **Spark Master** | http://localhost:8081 | 8081 | - | ✅ Operational |
+| 📊 **Streamlit Dashboard** | http://localhost:8501 | 8501 | - | ✅ Operational |
+| 📈 **Grafana** | http://localhost:3000 | 3000 | admin/admin123 | ✅ Operational |
+| 💾 **MinIO Console** | http://localhost:9001 | 9001 | admin/admin12345 | ✅ Operational |
+| 🗄️ **PostgreSQL** | localhost:5432 | 5432 | nitro_user/nitro_pass | ✅ Operational |
+| 🚀 **FastAPI** | http://localhost:8000 | 8000 | - | ✅ Operational |
+| 📡 **Kafka** | localhost:9092 | 9092/29092 | - | ✅ Operational |
 
 ## 🚀 Quick Start
 
 ```bash
-# Clonar el repositorio
-git clone <tu-repositorio>
+# Clone the repository
+git clone <your-repository>
 cd proyecto-nitro
 
-# Iniciar todos los servicios
+# Start all services
 docker-compose up -d
 
-# Verificar el estado de los servicios
+# Check service status
 docker-compose ps
 
-# Iniciar el productor de datos
+# Start the data producer
 ./start-producer.sh
 
-# Acceder a los dashboards (esperar 2-3 minutos para inicialización completa)
-echo "Accesos:"
+# Access dashboards (wait 2-3 minutes for complete initialization)
+echo "Access URLs:"
 echo "Airflow: http://localhost:8080"
 echo "Grafana: http://localhost:3000"
 echo "Streamlit: http://localhost:8501"
 ```
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 proyecto-nitro/
-├── 📊 airflow/                 # DAGs y configuración de Airflow
-├── 🚀 api-dashboard/           # FastAPI y Streamlit
-│   ├── fastapi/               # API de predicciones ML
-│   └── dashboards/            # Dashboards interactivos
-├── 📡 kafka-producer/          # Productor de datos Kafka
+├── 📊 airflow/                 # Airflow DAGs and configuration
+├── 🚀 api-dashboard/           # FastAPI and Streamlit
+│   ├── fastapi/               # ML prediction API
+│   └── dashboards/            # Interactive dashboards
+├── 📡 kafka-producer/          # Kafka data producer
 │   ├── Dockerfile
 │   ├── kafka_producer.py
 │   └── requirements.txt
-├── 🗄️ minio-setup/             # Configuración de buckets MinIO
-├── 📓 notebooks/              # Análisis y modelado
+├── 🗄️ minio-setup/             # MinIO bucket configuration
+├── 📓 notebooks/              # Analysis and modeling
 │   ├── 📊 EDA.ipynb
 │   ├── ⚙️ feature_engineering.ipynb
 │   ├── 🤖 model_training.ipynb
@@ -97,35 +97,35 @@ proyecto-nitro/
 │   ├── 🧠 models/
 │   └── 💾 data/
 │       └── enhanced_predictions.csv
-├── 🗃️ postgres-setup/          # Esquemas y config de PostgreSQL
-├── ⚡ python-processor/        # Procesador de datos Spark
-├── 🔥 spark-processing/       # Jobs de Spark
-├── 🐳 docker-compose.yml      # Orquestación de contenedores
-├── 🚀 start-producer.sh       # Script de inicio
-└── 📖 README.md              # Este archivo
+├── 🗃️ postgres-setup/          # PostgreSQL schemas and config
+├── ⚡ python-processor/        # Spark data processor
+├── 🔥 spark-processing/       # Spark jobs
+├── 🐳 docker-compose.yml      # Container orchestration
+├── 🚀 start-producer.sh       # Startup script
+└── 📖 README.md              # This file
 ```
 
-## 📓 Notebooks de Análisis
+## 📓 Analysis Notebooks
 
-| Notebook | Descripción | Tecnologías |
+| Notebook | Description | Technologies |
 |----------|-------------|-------------|
-| 📊 `EDA.ipynb` | Análisis exploratorio de datos | Pandas, Matplotlib, Seaborn |
-| ⚙️ `feature_engineering.ipynb` | Ingeniería de características | Scikit-learn, Featuretools |
-| 🤖 `model_training.ipynb` | Entrenamiento de modelos predictivos | Scikit-learn, XGBoost, MLflow |
-| 🔍 `mlflow_tracking.ipynb` | Seguimiento de experimentos ML | MLflow, Hyperopt |
-| 📈 `SHAP_analysis.ipynb` | Explicabilidad de modelos | SHAP, Matplotlib |
+| 📊 `EDA.ipynb` | Exploratory Data Analysis | Pandas, Matplotlib, Seaborn |
+| ⚙️ `feature_engineering.ipynb` | Feature engineering | Scikit-learn, Featuretools |
+| 🤖 `model_training.ipynb` | Predictive model training | Scikit-learn, XGBoost, MLflow |
+| 🔍 `mlflow_tracking.ipynb` | ML experiment tracking | MLflow, Hyperopt |
+| 📈 `SHAP_analysis.ipynb` | Model explainability | SHAP, Matplotlib |
 
-## 🔄 Flujo de Datos
+## 🔄 Data Flow
 
-1. **Ingesta**: Kafka Producer genera datos simulados de sensores industriales
-2. **Streaming**: Kafka publica en el topic `sensor_topic` con 1 partición
-3. **Procesamiento**: Spark procesa los datos en tiempo real con transformations
-4. **Almacenamiento**: Datos persistidos en PostgreSQL (estructurado) y MinIO (raw)
-5. **Análisis**: Notebooks especializados para EDA y modelado predictivo
-6. **Visualización**: Dashboards en tiempo real con Streamlit y Grafana
-7. **Predicción**: FastAPI sirve modelos ML para mantenimiento predictivo
+1. **Ingestion**: Kafka Producer generates simulated industrial sensor data
+2. **Streaming**: Kafka publishes to `sensor_topic` with 1 partition
+3. **Processing**: Spark processes data in real-time with transformations
+4. **Storage**: Data persisted in PostgreSQL (structured) and MinIO (raw)
+5. **Analysis**: Specialized notebooks for EDA and predictive modeling
+6. **Visualization**: Real-time dashboards with Streamlit and Grafana
+7. **Prediction**: FastAPI serves ML models for predictive maintenance
 
-## 🛠️ Tecnologías Implementadas
+## 🛠️ Implemented Technologies
 
 ### 🏗️ Data Engineering
 ![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
@@ -140,117 +140,115 @@ proyecto-nitro/
 ![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)
 ![SHAP](https://img.shields.io/badge/SHAP-FF6B6B?style=for-the-badge)
 
-### 📊 Visualización & Monitoring
+### 📊 Visualization & Monitoring
 ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 
-### 🐳 Infraestructura
+### 🐳 Infrastructure
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Docker Compose](https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-## 🛠️ Mantenimiento
+## 🛠️ Maintenance
 
-### Comandos Útiles
+### Useful Commands
 ```bash
-# Ver logs de todos los servicios
+# View logs for all services
 docker-compose logs
 
-# Ver logs específicos de un servicio
+# View specific service logs
 docker-compose logs kafka
 docker-compose logs spark-master
 
-# Reiniciar un servicio específico
+# Restart a specific service
 docker-compose restart kafka-producer
 
-# Ver estado de los contenedores
+# Check container status
 docker-compose ps
 
-# Acceder a PostgreSQL
+# Access PostgreSQL
 docker-compose exec postgres psql -U nitro_user -d nitro_db
 
-# Listar topics de Kafka
+# List Kafka topics
 docker-compose exec kafka kafka-topics --list --bootstrap-server localhost:9092
 
-# Escalar workers de Spark
+# Scale Spark workers
 docker-compose up -d --scale spark-worker=3
 ```
 
 ## 🐛 Troubleshooting
 
-### Problemas Comunes y Soluciones
+### Common Issues and Solutions
 
-| Problema | Solución |
+| Issue | Solution |
 |----------|----------|
-| Kafka no inicia | Verificar que Zookeeper esté saludable: `docker-compose logs zookeeper` |
-| Producer no conecta | Esperar 30-60 segundos para inicialización completa de Kafka |
-| PostgreSQL connection refused | Verificar logs: `docker-compose logs postgres` |
-| Dashboards no cargan | Esperar 2-3 minutos y verificar que todos los servicios estén UP |
-| Airflow webserver error | Ejecutar: `docker-compose restart airflow` |
+| Kafka won't start | Check Zookeeper health: `docker-compose logs zookeeper` |
+| Producer can't connect | Wait 30-60 seconds for Kafka complete initialization |
+| PostgreSQL connection refused | Check logs: `docker-compose logs postgres` |
+| Dashboards won't load | Wait 2-3 minutes and verify all services are UP |
+| Airflow webserver error | Run: `docker-compose restart airflow` |
 
-### Limpieza y Reinstalación
+### Cleanup and Reinstallation
 ```bash
-# Detener y eliminar todos los contenedores y volúmenes
+# Stop and remove all containers and volumes
 docker-compose down -v
 
-# Reconstruir e iniciar todos los servicios
+# Rebuild and start all services
 docker-compose up -d --build
 
-# Forzar recreación de contenedores
+# Force container recreation
 docker-compose up -d --force-recreate
 ```
 
-## 📊 Dashboard de Grafana - Configuración Recomendada
+## 📊 Grafana Dashboard - Recommended Configuration
 
-Para configurar Grafana con tus datos de PostgreSQL:
+To configure Grafana with your PostgreSQL data:
 
-1. Accede a http://localhost:3000
-2. Configura la fuente de datos PostgreSQL:
+1. Access http://localhost:3000
+2. Configure PostgreSQL data source:
    - Host: `postgres:5432`
    - Database: `nitro_db`
    - User: `nitro_user`
    - Password: `nitro_pass`
-3. Importa dashboards para:
-   - Monitoring de Kafka (lag, throughput)
-   - Métricas de rendimiento de Spark
-   - Análisis de predicciones del modelo ML
-   - Estado de salud de sensores en tiempo real
+3. Import dashboards for:
+   - Kafka monitoring (lag, throughput)
+   - Spark performance metrics
+   - ML model prediction analysis
+   - Real-time sensor health status
 
-## 📝 Licencia
+## 📝 License
 
-MIT License - ver archivo LICENSE para detalles.
+MIT License - see LICENSE file for details.
 
-## 🤝 Contribución
+## 🤝 Contribution
 
-¡Las contribuciones son bienvenidas! 
+Contributions are welcome! 
 
 ```bash
-# 1. Haz fork del proyecto
-# 2. Crea tu feature branch
+# 1. Fork the project
+# 2. Create your feature branch
 git checkout -b feature/AmazingFeature
 
-# 3. Commit tus cambios
+# 3. Commit your changes
 git commit -m 'Add some AmazingFeature'
 
-# 4. Push al branch
+# 4. Push to the branch
 git push origin feature/AmazingFeature
 
-# 5. Abre un Pull Request
+# 5. Open a Pull Request
 ```
 
-## 📞 Soporte
+## 📞 Support
 
-Si encuentras problemas:
-1. Revisa la sección de Troubleshooting
-2. Verifica los logs con `docker-compose logs [servicio]`
-3. Abre un issue en el repositorio con:
-   - Descripción detallada del problema
-   - Comandos ejecutados
-   - Logs relevantes
-   - Capturas de pantalla (si aplica)
+If you encounter issues:
+1. Check the Troubleshooting section
+2. Verify logs with `docker-compose logs [service]`
+3. Open an issue in the repository with:
+   - Detailed description of the problem
+   - Commands executed
+   - Relevant logs
+   - Screenshots (if applicable)
 
 ---
 
-⭐ **¡Si este proyecto te resulta útil, por favor dale una estrella en GitHub!**
-
-
+⭐ **If you find this project useful, please give it a star on GitHub!**
